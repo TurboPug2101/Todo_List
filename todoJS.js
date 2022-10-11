@@ -120,7 +120,14 @@ function  removeTaskFromLocalSorage(taskItem){
     localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
+function clearTask(e){
+    // taskList.innerHTML='';
 
+    while(taskList.firstChild){
+        taskList.removeChild(taskList.firstChild);
+    }
+    clearTasksFromLocalStorage();
+}
 function clearTasksFrofmLocalStorage()
 {
     localStorage.clear();
